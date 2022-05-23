@@ -1,5 +1,10 @@
 .idea/
 
+# ignore data files as it should not be republished, can be downloaded
+# using the python script 
+
+data/*
+
 # Created by https://www.gitignore.io/api/macos,linux,django,python,pycharm
 
 ### Django ###
