@@ -11,3 +11,11 @@ pd.read_csv(url_1).to_csv("data/listings.csv", index=False)
 
 url_2 = "http://data.insideairbnb.com/switzerland/z%C3%BCrich/zurich/2022-03-29/data/listings.csv.gz"
 pd.read_csv(url_2, compression='gzip').to_csv("data/listings_detailed.csv", index=False)
+
+
+# download geojson file to disk
+url_3 = "http://data.insideairbnb.com/switzerland/z%C3%BCrich/zurich/2022-03-29/visualisations/neighbourhoods.geojson"
+import requests
+r = requests.get(url_3)
+with open("data/neighbourhoods.geojson", "wb") as f:
+    f.write(r.content)
